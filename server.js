@@ -20,9 +20,9 @@ io.on('connection', (socket) => {
   });
 });
 
-const HOSTNAME = process.env.HOSTNAME || 'localhost';
 const PORT = process.env.PORT || 8000;
+const HOSTNAME = process.env.HOSTNAME || `http://localhost:${PORT}`;
 
 server.listen(PORT, () => {
-  console.log(`Server started at http://${HOSTNAME}:${PORT}`);
+  console.log(`Server started at ${HOSTNAME}`);
 });
